@@ -16,7 +16,7 @@ import org.testng.annotations.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public abstract class TestBase {
     protected WebDriver driver;
     protected Actions actions;
     protected WebDriverWait wait;
@@ -67,7 +67,7 @@ public class TestBase {
 
     }
     //ITestResult class describes the result of a test in TestNG
-    @AfterMethod
+
     public void tearDown(ITestResult result) throws InterruptedException, IOException {
         //If test fails
         if(result.getStatus()==ITestResult.FAILURE){
